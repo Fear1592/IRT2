@@ -33,16 +33,13 @@ class Produced(models.Model):
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
 
-    def current_view(self):
-        return self.view.hits
-
     def __str__(self):
         return str(self.name)
 
 
 class Images(models.Model):
     produced = models.ForeignKey(Produced, on_delete=models.CASCADE, verbose_name='Услуга', related_name='images')
-    image = models.ImageField(upload_to='image/', verbose_name='Общие изображения услуги')
+    image = models.ImageField(upload_to='produced/', verbose_name='Общие изображения услуги', null=True, blank=True)
 
     class Meta:
         ordering = ['id']
