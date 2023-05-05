@@ -1,7 +1,7 @@
 from django.contrib.admin.sites import NotRegistered
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import UserProfile
+from .models import UserProfile, Profile, Images
 from django.contrib import admin
 
 
@@ -31,3 +31,5 @@ except NotRegistered:
     pass
 
 admin.site.register(UserProfile, MyUserAdmin)
+admin.site.register(Profile)
+admin.site.register(Images)
